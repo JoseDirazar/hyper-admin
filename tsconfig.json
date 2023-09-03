@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "lib/prismadb.ts"  ],
+, "lib/prismadb.ts", "app/(dashboard)/users/components/toast.jsx"  ],
   "exclude": [
     "node_modules"
   ]

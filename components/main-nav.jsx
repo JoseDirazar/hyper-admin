@@ -10,8 +10,8 @@ export default function MainNav() {
       label: "Users",
     },
     {
-      href: `/dashboard`,
-      label: "Dashboard",
+      href: `/sales`,
+      label: "Sales",
     },
   ];
 
