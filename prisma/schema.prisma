@@ -7,33 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model UsersEvents {
-  createdAt DateTime @db.Timestamptz(6)
-  updatedAt DateTime @db.Timestamptz(6)
-  eventId   Int
-  userId    Int
-
-  @@id([eventId, userId])
-}
-
-model cartevent {
-  createdAt DateTime @db.Timestamptz(6)
-  updatedAt DateTime @db.Timestamptz(6)
-  cartId    String   @db.Uuid
-  eventId   String   @db.Uuid
-
-  @@id([cartId, eventId])
-}
-
-model carts {
-  id         String   @id @db.Uuid
-  userid     Int
-  totalmount Int      @default(0)
-  eventsid   String   @db.VarChar(255)
-  boughtat   DateTime @db.Timestamptz(6)
-  user_id    String?  @db.Uuid
-}
-
 model category {
   id    String  @id @db.Uuid
   name  String  @db.VarChar(255)
@@ -140,14 +113,6 @@ model ticket {
   user      user?    @relation(fields: [userId], references: [id])
 }
 
-model tickets {
-  id        Int      @id @default(autoincrement())
-  price     Float    @default(0)
-  bought_at DateTime @default(now()) @db.Timestamptz(6)
-  userId    String?  @db.Uuid
-  eventId   String?  @db.Uuid
-}
-
 model user {
   id             String         @id @db.Uuid
   name           String?        @db.VarChar(255)
@@ -161,15 +126,6 @@ model user {
   replys         replys[]
   ticket         ticket[]
   users_events   users_events[]
-}
-
-model user_id {
-  createdAt DateTime @db.Timestamptz(6)
-  updatedAt DateTime @db.Timestamptz(6)
-  userId    String   @db.Uuid
-  eventId   String   @db.Uuid
-
-  @@id([userId, eventId])
 }
 
 model users_events {

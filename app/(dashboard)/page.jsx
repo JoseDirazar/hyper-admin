@@ -1,6 +1,4 @@
-
 import Navbar from '../../components/navbar'
-import Image from 'next/image'
 import FetchUsers from './components/users'
 import { Buttons } from './components/toast'
 
