@@ -1,5 +1,5 @@
 import React from 'react'
-import FetchUsers from '../components/users'
+import FetchUsers from './components/users'
 
 export default function Users() {
   return (
@@ -16,7 +16,7 @@ export default function Users() {
           <h2 className='flex justify-center w-96'>Id</h2>
           <h2 className='flex justify-center w-48'>Name</h2>
         </div>
-        <FetchUsers/>
+       <FetchUsers />
       </div>
     </div>
   )

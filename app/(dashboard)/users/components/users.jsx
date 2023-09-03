@@ -1,7 +1,7 @@
 import axios from 'axios'
 export default async function FetchUsers() {
     const { data }= await axios.get('http://localhost:3000/api/users')
-    console.log("usuarios", data)
+
     return (
         <>
             {data?.map((user, index) => (

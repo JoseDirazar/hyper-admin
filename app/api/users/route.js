@@ -9,7 +9,7 @@ export async function GET(
 ) { 
     try {
         const users = await prismadb.user.findMany()
-        console.log(users)
+       
         return NextResponse.json(users)
     } catch (error) {
         console.log('USERS_GET', error)
