@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model UsersEvents {
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  eventId   Int
+  userId    Int
+
+  @@id([eventId, userId])
+}
+
+model cartevent {
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  cartId    String   @db.Uuid
+  eventId   String   @db.Uuid
+
+  @@id([cartId, eventId])
+}
+
+model carts {
+  id         String   @id @db.Uuid
+  userid     Int
+  totalmount Int      @default(0)
+  eventsid   String   @db.VarChar(255)
+  boughtat   DateTime @db.Timestamptz(6)
+  user_id    String?  @db.Uuid
+}
+
+model category {
+  id    String  @id @db.Uuid
+  name  String  @db.VarChar(255)
+  image String  @db.VarChar(255)
+  event event[]
+}
+
+model cities {
+  id       String  @id @db.Uuid
+  name     String  @db.VarChar(255)
+  state_id String? @db.Uuid
+  states   states? @relation(fields: [state_id], references: [id])
+}
+
+model comments {
+  id        String   @id @db.Uuid
+  user_id   String   @db.Uuid
+  show      Boolean? @default(false)
+  comment   String   @db.VarChar(255)
+  rating    Int      @default(0)
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  user      user     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  replys    replys[]
+}
+
+model countries {
+  id     String   @id @db.Uuid
+  name   String   @db.VarChar(255)
+  iso    String   @db.VarChar(255)
+  states states[]
+}
+
+model event {
+  id           String         @id @db.Uuid
+  event_name   String         @db.VarChar(255)
+  org_name     String?        @db.VarChar(255)
+  location     Json?          @db.Json
+  place_name   String?
+  address      String?        @db.VarChar(255)
+  city         String?        @db.VarChar(255)
+  state        String?        @db.VarChar(255)
+  country      String?        @db.VarChar(255)
+  postal       String?        @db.VarChar(255)
+  start_at     DateTime       @db.Timestamptz(6)
+  end_at       DateTime?      @db.Timestamptz(6)
+  intro        String?
+  description  String?
+  social_media Json?          @db.Json
+  event_image  String?        @default("https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg")
+  price        Decimal?       @db.Decimal(6, 2)
+  stock        Int?
+  created      Boolean?       @default(false)
+  top_event    Boolean?       @default(false)
+  rating       Float?         @default(0)
+  review       Json?          @db.Json
+  category_id  String?        @db.Uuid
+  category     category?      @relation(fields: [category_id], references: [id])
+  ticket       ticket[]
+  users_events users_events[]
+}
+
+model events_categories {
+  createdAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @db.Timestamptz(6)
+  categoryId Int
+  eventId    String   @db.Uuid
+
+  @@id([categoryId, eventId])
+}
+
+model replys {
+  id         String   @id @db.Uuid
+  user_id    String   @db.Uuid
+  comment_id String   @db.Uuid
+  comment    String   @db.VarChar(255)
+  createdAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @db.Timestamptz(6)
+  comments   comments @relation(fields: [comment_id], references: [id], onDelete: Cascade)
+  user       user     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+}
+
+model sales {
+  id    String @id @db.Uuid
+  sales Json   @db.Json
+}
+
+model states {
+  id         String     @id @db.Uuid
+  name       String     @db.VarChar(255)
+  iso        String     @db.VarChar(255)
+  country_id String?    @db.Uuid
+  cities     cities[]
+  countries  countries? @relation(fields: [country_id], references: [id])
+}
+
+model ticket {
+  id        String   @id @db.Uuid
+  price     Float    @default(0)
+  bought_at DateTime @default(now()) @db.Timestamptz(6)
+  userId    String?  @db.Uuid
+  eventId   String?  @db.Uuid
+  event     event?   @relation(fields: [eventId], references: [id])
+  user      user?    @relation(fields: [userId], references: [id])
+}
+
+model tickets {
+  id        Int      @id @default(autoincrement())
+  price     Float    @default(0)
+  bought_at DateTime @default(now()) @db.Timestamptz(6)
+  userId    String?  @db.Uuid
+  eventId   String?  @db.Uuid
+}
+
+model user {
+  id             String         @id @db.Uuid
+  name           String?        @db.VarChar(255)
+  last_name      String?        @db.VarChar(255)
+  email          String         @db.VarChar(255)
+  user_image     String?        @default("https://cdn.vectorstock.com/i/preview-1x/62/38/avatar-13-vector-42526238.jpg")
+  password       String         @db.VarChar(255)
+  wallet_history Json?          @db.Json
+  admin          Boolean?       @default(false)
+  comments       comments[]
+  replys         replys[]
+  ticket         ticket[]
+  users_events   users_events[]
+}
+
+model user_id {
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  userId    String   @db.Uuid
+  eventId   String   @db.Uuid
+
+  @@id([userId, eventId])
+}
+
+model users_events {
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  userId    String   @db.Uuid
+  eventId   String   @db.Uuid
+  event     event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user      user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, eventId])
+}
