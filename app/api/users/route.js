@@ -25,14 +25,14 @@ export async function PATCH(req) {
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
     const body = await req.json();
-    const { hyperEventUserId } = body;
-
+    const { hyperEventUserId, status } = body;
+    console.log(status)
     await prismadb.user.update({
         where: {
             id: hyperEventUserId
         },
         data: {
-            admin: true
+            admin: status
         }
     })
 
