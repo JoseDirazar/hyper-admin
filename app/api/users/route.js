@@ -9,7 +9,11 @@ export async function GET(req) {
 
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
-    const users = await prismadb.user.findMany();
+    const users = await prismadb.user.findMany({
+      orderBy: {
+        name: 'asc'
+      }
+    });
 
     return NextResponse.json(users);
   } catch (error) {

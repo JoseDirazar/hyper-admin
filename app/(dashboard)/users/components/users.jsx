@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function FetchUsers() {
   const [users, setUsers] = useState([]);
-  console.log(users);
 
   useEffect(() => {
     (async () => {
@@ -14,9 +13,11 @@ export default function FetchUsers() {
     })();
   }, []);
 
-  async function handleBann(hyperEventUserId, status) {
+  async function handleBann(hyperEventUserId, status, index) {
     try {
-      console.log(hyperEventUserId);
+      const newUsersState = [...users].map((user, i) =>  ({...user, admin: i === index ? !user.admin : user.admin}))
+      setUsers(newUsersState)
+      console.log(users)
       await axios.patch("http://localhost:3000/api/users", {
         hyperEventUserId,
         status
@@ -38,15 +39,15 @@ export default function FetchUsers() {
           <div className="flex justify-center w-48">
             {user.name} {user.last_name}
           </div>
-          {!user.admin ? (
+          {user.admin ? (
             /* bann = false */ <button
-              onClick={() => handleBann(user.id, false)}
+              onClick={() => handleBann(user.id, false, index)}
               className="h-10 cursor-pointer ml-10 bg-red-500 rounded-[4px] pl-1 pr-1"
             >
               Bann
             </button>
           ) : (
-            /* bann = true */ <button onClick={() => handleBann(user.id, true)} className="h-10 cursor-pointer ml-10 bg-blue-500 rounded-[4px] pl-1 pr-1">
+            /* bann = true */ <button onClick={() => handleBann(user.id, true, index)} className="h-10 cursor-pointer ml-10 bg-blue-500 rounded-[4px] pl-1 pr-1">
               Unbann
             </button>
           )}

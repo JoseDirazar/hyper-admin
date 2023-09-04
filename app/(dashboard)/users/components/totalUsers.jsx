@@ -7,7 +7,8 @@ export default async function TotalUsers() {
 
     return (
         <>
-           <div>Total users: {totalUsers}</div>
+           <div className='mt-16 text-[30px]'>Total users:</div>
+           <div className='flex justify-center text-[60px]'>{totalUsers}</div>
         </>
     )
 }
