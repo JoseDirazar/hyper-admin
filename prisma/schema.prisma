@@ -90,8 +90,10 @@ model replys {
 }
 
 model sales {
-  id    String @id @db.Uuid
-  sales Json   @db.Json
+  id        String   @id @db.Uuid
+  sales     Json     @db.Json
+  createdAt DateTime @default(now()) @db.Timestamptz(5)
+  updatedAt DateTime @default(now()) @db.Timestamptz(5)
 }
 
 model states {
