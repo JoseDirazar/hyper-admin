@@ -11,7 +11,9 @@ export async function GET() {
 
     const totalSales = await prismadb.sales.findMany();
 
-    return NextResponse.json(totalSales);
+    const formattedSales = totalSales.map((sale) => ({...sale, createdAt: sale.createdAt.toString().split('G')[0].trim() }))
+
+    return NextResponse.json(formattedSales);
   } catch (error) {
     console.log("[TOTAL_SALES", error)
     return new NextResponse("Internal error.", { status: 500 })

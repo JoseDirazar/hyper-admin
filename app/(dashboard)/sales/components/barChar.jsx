@@ -4,7 +4,8 @@ const BarChart = ({ data }) => {
   const maxValue = Math.max(...data.map(item => item.total));
 
   return (
-    <div className="w-full h-64 bg-gray-200 p-4 flex items-center">
+    <div className='flex justify-center'>
+    <div className="w-[80%] h-64 bg-gray-200 p-4 flex items-center">
       {data.map((item, index) => (
         <div
           key={index}
@@ -20,6 +21,7 @@ const BarChart = ({ data }) => {
           <div className="text-center">{item.name}</div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

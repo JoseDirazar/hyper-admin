@@ -2,7 +2,7 @@ import React from "react";
 import TotalSales from "./components/totalSaleslist";
 import axios from "axios";
 import { getGraphRevenue } from "./components/actions/get-graph-revenue";
-import BarChar from "./components/actions/barChar";
+import BarChar from "./components/barChar";
 
 export default async function Sales() {
   
