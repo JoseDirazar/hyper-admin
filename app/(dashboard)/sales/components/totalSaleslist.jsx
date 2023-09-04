@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default async function TotalSales() {
   const sales = await axios.get("http://localhost:3000/api/sales");
-  console.log(sales)
+
   const total = sales.data.reduce((acc, curr) => acc + curr.sales, 0)
 
   return (

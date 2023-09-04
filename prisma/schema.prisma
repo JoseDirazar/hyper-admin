@@ -27,8 +27,8 @@ model comments {
   show      Boolean? @default(false)
   comment   String   @db.VarChar(255)
   rating    Int      @default(0)
-  createdAt DateTime @db.Timestamptz(6)
-  updatedAt DateTime @db.Timestamptz(6)
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @db.Timestamptz(6)
   user      user     @relation(fields: [user_id], references: [id], onDelete: Cascade)
   replys    replys[]
 }

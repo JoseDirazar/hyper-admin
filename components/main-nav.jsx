@@ -13,6 +13,10 @@ export default function MainNav() {
       href: `/sales`,
       label: "Sales",
     },
+    {
+      href: `/events`,
+      label: "Events",
+    },
   ];
 
   return (
