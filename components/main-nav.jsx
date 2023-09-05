@@ -13,6 +13,10 @@ export default function MainNav() {
       href: `/sales`,
       label: "Sales",
     },
+    {
+      href: `/comments`,
+      label: "Comments",
+    },
   ];
 
   return (
