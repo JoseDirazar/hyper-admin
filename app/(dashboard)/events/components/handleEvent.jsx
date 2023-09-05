@@ -19,7 +19,6 @@ export default function HandleEvent({ eventStatus, eventId }) {
           eventId: eventIdParam,
         }
       );
-      console.log("status response: ", statusResponse.data);
       setStatus(statusResponse.data);
     } catch (error) {
       console.log(error);
@@ -30,6 +29,7 @@ export default function HandleEvent({ eventStatus, eventId }) {
     <div key={eventId}>
       {status ? (
         <button
+        key={Math.random() * 173}
           className="bg-red-600 rounded-full border-solid p-2"
           onClick={() => handleStatus(false, eventId)}
         >
@@ -37,6 +37,7 @@ export default function HandleEvent({ eventStatus, eventId }) {
         </button>
       ) : (
         <button
+        key={Math.random() * 173}
           className="bg-blue-600 rounded-full border-solid p-2"
           onClick={() => handleStatus(true, eventId)}
         >

@@ -15,7 +15,7 @@ export default function FetchUsers() {
 
   async function handleBann(hyperEventUserId, status, index) {
     try {
-      const newUsersState = [...users].map((user, i) =>  ({...user, admin: i === index ? !user.admin : user.admin}))
+      const newUsersState = [...users].map((user, i) =>  ({...user, active: i === index ? !user.active : user.active}))
       setUsers(newUsersState)
       console.log(users)
       await axios.patch("http://localhost:3000/api/users", {
@@ -39,7 +39,7 @@ export default function FetchUsers() {
           <div className="flex justify-center w-48">
             {user.name} {user.last_name}
           </div>
-          {user.admin ? (
+          {user.active ? (
             /* bann = false */ <button
               onClick={() => handleBann(user.id, false, index)}
               className="h-10 cursor-pointer ml-10 bg-red-500 rounded-[4px] pl-1 pr-1"

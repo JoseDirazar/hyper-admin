@@ -7,7 +7,7 @@ export default async function TotalSales() {
 
   return (
     <div className="flex flex-col">
-      {sales.data?.map((paymentRow, index) => (
+      {sales?.data.map((paymentRow, index) => (
         <div
           key={index}
           className="flex justify-center text-center pt-2 pb-2 border-t-2 border-slate-500"

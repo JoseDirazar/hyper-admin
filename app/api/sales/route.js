@@ -5,9 +5,9 @@ import prismadb from "../../../lib/prismadb";
 
 export async function GET() {
   try {
-    /* const { userId } = auth();
+     /* const { userId } = auth();
 
-    if (!userId) return new NextResponse("Unauthorized", { status: 403 }); */
+    if (!userId) return NextResponse("Unauthorized", { status: 403 }); */
 
     const totalSales = await prismadb.sales.findMany();
 
