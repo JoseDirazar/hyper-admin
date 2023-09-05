@@ -2,6 +2,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function AllComments() {
   const [commentState, setCommentState] = useState([])
@@ -28,7 +29,7 @@ export default function AllComments() {
             </div>
               <p className='ml-4 mt-1 pt-1 font-medium'>{comment.comment}</p>
             <div className='w-full flex justify-center'>
-            <img src={comment.user.user_image} alt={comment.user.name} className='rounded-full w-[75px] h-[80px] border-2 absolute bottom-[-40px]'/>
+            <Image src={comment.user.user_image} alt={comment.user.name} className='rounded-full w-[auto] h-[auto] border-2 absolute bottom-[-40px]' width={75} height={80}/>
             <p className='absolute right-4 text-black text-sm'>-{comment.user.name} {comment.user.last_name}</p>
             {comment.show === false ? <button className='flex absolute bottom-5 right-5 bg-green-500 rounded-md p-1' onClick={() => handleClickComment(!comment.show, comment.id, index)}>Show</button> : <button className='flex absolute bottom-5 right-5 bg-red-500 rounded-md p-1' onClick={() => handleClickComment(!comment.show, comment.id, index)}>NoShow</button>}
           </div>

@@ -11,9 +11,10 @@ const EventsPage = async () => {
           kay={index}
           className="flex flex-col h-80 w-80 items-center justify-center gap-2 border-2 border-b-rose-800 "
         >
-          <p className="text-sm">{event.id}</p>
+          
           <p className="text-sm">{event.event_name}</p>
           <Image
+            className="w-auto h-auto"
             src={event.event_image}
             width={200}
             height={200}
