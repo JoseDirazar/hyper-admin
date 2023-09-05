@@ -3,7 +3,7 @@ import prismaDb from '../../../../../lib/prismadb'
 
 export const getGraphRevenue = async () => {
     const paidOrders = await prismaDb.sales.findMany()
-    console.log(paidOrders)
+    
     const monthlyRevenue = {};
 
   // Grouping the orders by month and summing the revenue

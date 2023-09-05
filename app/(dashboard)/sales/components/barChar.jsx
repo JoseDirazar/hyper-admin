@@ -6,7 +6,7 @@ const BarChart = ({ data }) => {
   return (
     <div className="flex justify-center">
       <div className="w-[80%] h-64 bg-gray-200 p-4 flex items-center relative">
-        <div className="w-6 h-[90%] flex flex-col justify-between bg-green-500">
+        <div className="w-6 h-[90%] flex flex-col justify-between">
           <div className="w-[100%] h-full flex flex-col items-center justify-between">
             <div className="text-center">{maxValue}</div>
             <div className="text-center">{Math.round(maxValue / 2)}</div>
@@ -17,7 +17,7 @@ const BarChart = ({ data }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="relative w-16 h-48 flex flex-col items-center justify-end"
+            className="relative w-16 h-48 flex flex-col items-center justify-end m-2 "
             style={{ flex: `1` }}
           >
             <div
