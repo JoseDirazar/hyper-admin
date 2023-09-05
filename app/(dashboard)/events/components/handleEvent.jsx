@@ -27,12 +27,10 @@ export default function HandleEvent({ eventStatus, eventId }) {
   return (
     <>
       {status ? (
-        <button onClick={() => handleStatus(false, eventId)}>Disabled</button>
+        <button className="bg-red-600 rounded-full border-solid p-2" onClick={() => handleStatus(false, eventId)}>Disable</button>
       ) : (
-        <button onClick={() => handleStatus(true, eventId)}>Enabled</button>
+        <button className="bg-blue-600 rounded-full border-solid p-2" onClick={() => handleStatus(true, eventId)}>Enable</button>
       )}
-      {/* <button onClick={() => handleStatus(false, eventId)}>Disabled</button>
-      <button onClick={() => handleStatus(true, eventId)}>Enabled</button> */}
     </>
   );
 }

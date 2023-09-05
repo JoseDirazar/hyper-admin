@@ -3,9 +3,7 @@ import HandleEvent from "./components/handleEvent";
 import Image from "next/image";
 const EventsPage = async () => {
   let {data} = await axios.get("http://localhost:3000/api/events")
-
-  //data = data.slice(0, 18);
-  console.log("recien calentito: ", data[2].active, data[2].event_name); // Llega true pero en la db esta en false!
+  
   return (
     <div key={2838123} className="flex flex-row flex-wrap h-full">
       {data?.map((event, index) => (
