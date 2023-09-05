@@ -5,7 +5,7 @@ const EventsPage = async () => {
      
       let data = await fetch('http://localhost:3000/api/events').then(res => res.json()).catch(err => console.log(err))
       data = data.slice(0, 18)
-      console.log(data[0].active)
+      console.log("recien calentito: ", data[0].active, data[0].event_name) // Llega true pero en la db esta en false!
       return ( 
           <div className="flex flex-row flex-wrap h-full">
             {data?.map((event, index) => (

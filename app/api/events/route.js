@@ -26,16 +26,16 @@ export async function PATCH(req) {
 
     const { eventId, eventStatus } = body;
 
-    const events = await prismadb.event.update({
+    const event = await prismadb.event.update({
       where: {
         id: eventId,
       },
       data: {
-        active: !eventStatus,
+        active: eventStatus,
       },
     });
 
-    return NextResponse.json(events);
+    return NextResponse.json(event.active);
   } catch (error) {
     console.log(error);
     return new NextResponse("Internal error", { status: 500 });
