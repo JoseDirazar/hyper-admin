@@ -24,11 +24,11 @@ model cities {
 model comments {
   id        String   @id @db.Uuid
   user_id   String   @db.Uuid
-  show      Boolean? @default(false)
   comment   String   @db.VarChar(255)
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  show      Boolean? @default(false)
   rating    Int      @default(0)
-  createdAt DateTime @default(now()) @db.Timestamptz(6)
-  updatedAt DateTime @default(now()) @db.Timestamptz(6)
   user      user     @relation(fields: [user_id], references: [id], onDelete: Cascade)
   replys    replys[]
 }
@@ -64,18 +64,10 @@ model event {
   rating       Float?         @default(0)
   review       Json?          @db.Json
   category_id  String?        @db.Uuid
+  active       Boolean?       @default(true)
   category     category?      @relation(fields: [category_id], references: [id])
   ticket       ticket[]
   users_events users_events[]
-}
-
-model events_categories {
-  createdAt  DateTime @db.Timestamptz(6)
-  updatedAt  DateTime @db.Timestamptz(6)
-  categoryId Int
-  eventId    String   @db.Uuid
-
-  @@id([categoryId, eventId])
 }
 
 model replys {
@@ -92,8 +84,8 @@ model replys {
 model sales {
   id        String   @id @db.Uuid
   sales     Json     @db.Json
-  createdAt DateTime @default(now()) @db.Timestamptz(5)
-  updatedAt DateTime @default(now()) @db.Timestamptz(5)
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
 }
 
 model states {
@@ -123,7 +115,7 @@ model user {
   user_image     String?        @default("https://cdn.vectorstock.com/i/preview-1x/62/38/avatar-13-vector-42526238.jpg")
   password       String         @db.VarChar(255)
   wallet_history Json?          @db.Json
-  admin          Boolean?       @default(false)
+  active         Boolean?       @default(true)
   comments       comments[]
   replys         replys[]
   ticket         ticket[]
