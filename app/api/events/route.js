@@ -9,8 +9,8 @@ export async function GET(req) {
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
     const events = await prismadb.event.findMany();
-
-    return new NextResponse.json(events);
+    
+    return NextResponse.json(events);
   } catch (error) {
     console.log(error);
     return new NextResponse("Internal error", { status: 500 });
@@ -31,11 +31,11 @@ export async function PATCH(req) {
         id: eventId,
       },
       data: {
-        active: eventStatus,
+        active: !eventStatus,
       },
     });
 
-    return new NextResponse.json(events);
+    return NextResponse.json(events);
   } catch (error) {
     console.log(error);
     return new NextResponse("Internal error", { status: 500 });
@@ -57,7 +57,7 @@ export async function DELETE(req) {
       },
     });
 
-    return new NextResponse.json(events);
+    return NextResponse.json(events);
   } catch (error) {
     console.log(error);
     return new NextResponse("Internal error", { status: 500 });

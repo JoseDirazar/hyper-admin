@@ -8,7 +8,7 @@ const BarChart = ({ data }) => {
       <div className="w-[80%] h-64 bg-gray-200 p-4 flex items-center relative">
         <div className="w-6 h-[90%] flex flex-col justify-between">
           <div className="w-[100%] h-full flex flex-col items-center justify-between">
-            <div className="text-center">{maxValue}</div>
+            <div className="text-center">{Math.round(maxValue)}</div>
             <div className="text-center">{Math.round(maxValue / 2)}</div>
             <div className="text-center">0</div>
           </div>
