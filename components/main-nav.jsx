@@ -14,6 +14,10 @@ export default function MainNav() {
       label: "Sales",
     },
     {
+      href: `/comments`,
+      label: "Comments",
+    },
+    {
       href: `/events`,
       label: "Events",
     },
