@@ -1,0 +1,106 @@
+[
+  {
+    "id": "8aefa2de-0f7c-4a3c-b191-879b959cffe7",
+    "sales": {
+      "event_name": "",
+      "amount": 145.3,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "mon_flores@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-09-04T06:26:27.249Z"
+  },
+  {
+    "id": "10885aa4-492c-45a2-bc3f-3230036c2406",
+    "sales": nt": 219.99,
+      "user_name": "",
+      "user_last_name": "",
+      "emai{
+      "event_name": "",
+      "amoul": "tommi@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-09-04T06:26:27.249Z"
+  },
+  {
+    "id": "5fac3e2a-9643-40cf-a75b-26ed5a1e2811",
+    "sales": {
+      "event_name": "",
+      "amount": 85.5,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "dlanzeta@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-09-04T06:26:27.249Z"
+  },
+  {
+    "id": "4de14639-d057-4aea-807f-f1689175fff4",
+    "sales": {
+      "event_name": "",
+      "amount": 99.2,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "jtolosa@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-09-04T06:26:27.249Z"
+  },
+  {
+    "id": "fb694468-76c0-4f1b-8e1e-bbd077a3c2b6",
+    "sales": {
+      "event_name": "",
+      "amount": 85.25,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "marcos@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-09-04T06:26:27.249Z"
+  },
+  {
+    "id": "cfa7786e-c306-4806-a127-125e9645ad84",
+    "sales": {
+      "event_name": "",
+      "amount": 132.2,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "juan@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-08-04T06:26:27.249Z"
+  },
+  {
+    "id": "10745bdc-728d-4ad4-aebd-a2f8e02af61b",
+    "sales": {
+      "event_name": "",
+      "amount": 78,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "carlos@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-07-04T06:26:27.249Z"
+  },
+  {
+    "id": "28f77adb-2bca-4c56-8058-6ed0ebba1ed8",
+    "sales": {
+      "event_name": "",
+      "amount": 162.94,
+      "user_name": "",
+      "user_last_name": "",
+      "email": "diego_dev@gmail.com",
+      "status": "",
+      "ticket_count": ""
+    },
+    "createdAt": "2023-03-04T06:26:27.249Z"
+  }
+]

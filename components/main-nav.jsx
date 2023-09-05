@@ -17,6 +17,10 @@ export default function MainNav() {
       href: `/comments`,
       label: "Comments",
     },
+    {
+      href: `/events`,
+      label: "Events",
+    },
   ];
 
   return (
