@@ -17,7 +17,7 @@ export default function HandleEvent({ eventStatus, eventId }) {
         eventStatus: statusParam,
         eventId: eventIdParam,
       });
-      
+      console.log("status response: ", statusResponse.data)
       setStatus(statusResponse.data);
     } catch (error) {
      console.log(error)
@@ -31,6 +31,8 @@ export default function HandleEvent({ eventStatus, eventId }) {
       ) : (
         <button onClick={() => handleStatus(true, eventId)}>Enabled</button>
       )}
+      {/* <button onClick={() => handleStatus(false, eventId)}>Disabled</button>
+      <button onClick={() => handleStatus(true, eventId)}>Enabled</button> */}
     </>
   );
 }

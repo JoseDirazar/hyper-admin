@@ -6,21 +6,21 @@ export async function GET(req) {
   try {
     const userId = auth();
 
-    if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
+    if (!userId) return NextResponse("Unauthenticated", { status: 401 });
 
     const events = await prismadb.event.findMany();
     
     return NextResponse.json(events);
   } catch (error) {
     console.log(error);
-    return new NextResponse("Internal error", { status: 500 });
+    return NextResponse("Internal error", { status: 500 });
   }
 }
 
 export async function PATCH(req) {
   try {
     const userId = auth();
-    if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
+    if (!userId) return NextResponse("Unauthenticated", { status: 401 });
 
     const body = await req.json();
 
@@ -38,14 +38,14 @@ export async function PATCH(req) {
     return NextResponse.json(event.active);
   } catch (error) {
     console.log(error);
-    return new NextResponse("Internal error", { status: 500 });
+    return NextResponse("Internal error", { status: 500 });
   }
 }
 
 export async function DELETE(req) {
   try {
     const userId = auth();
-    if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
+    if (!userId) return NextResponse("Unauthenticated", { status: 401 });
 
     const body = await req.json();
 
@@ -60,6 +60,6 @@ export async function DELETE(req) {
     return NextResponse.json(events);
   } catch (error) {
     console.log(error);
-    return new NextResponse("Internal error", { status: 500 });
+    return NextResponse("Internal error", { status: 500 });
   }
 }
