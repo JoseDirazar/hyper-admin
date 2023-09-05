@@ -3,7 +3,7 @@ import axios from "axios";
 export default async function TotalSales() {
   const sales = await axios.get("http://localhost:3000/api/sales");
 
-  const total = sales.data.reduce((acc, curr) => acc + curr.sales.amount, 0)
+  const total = sales.data.reduce((acc, curr) => acc + curr.sales.amount, 0).toFixed(2)
 
   return (
     <div className="flex flex-col">
