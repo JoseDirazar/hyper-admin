@@ -7,7 +7,7 @@ export default function FetchUsers() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get("http://localhost:3000/api/users");
+      const { data } = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/users");
 
       setUsers([...data]);
     })();
@@ -18,7 +18,7 @@ export default function FetchUsers() {
       const newUsersState = [...users].map((user, i) =>  ({...user, active: i === index ? !user.active : user.active}))
       setUsers(newUsersState)
       console.log(users)
-      await axios.patch("http://localhost:3000/api/users", {
+      await axios.patch(process.env.NEXT_PUBLIC_URL + "/api/users", {
         hyperEventUserId,
         status
       });

@@ -15,7 +15,7 @@ const EventsPage = () => {
   useEffect(() => {
     (async () => {
       try {
-        let { data } = await axios.get("http://localhost:3000/api/events");
+        let { data } = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/events");
         data = data.slice(0, 10)
         setEvents([...data])
       } catch (error) {

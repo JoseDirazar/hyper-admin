@@ -16,7 +16,7 @@ export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
   async function postNewStatus(statusParam, eventIdParam) {
     try {
       const statusResponse = await axios.patch(
-        "http://localhost:3000/api/events",
+        process.env.NEXT_PUBLIC_URL + "/api/events",
         {
           eventStatus: statusParam,
           eventId: eventIdParam,

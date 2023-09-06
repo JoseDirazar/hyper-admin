@@ -10,11 +10,11 @@ export default function AllComments() {
   const handleClickComment = async (statusComment, id, index) => {
     const statusChanged = [...commentState].map((comment, i) =>  ({...comment, show: i === index ? !comment.show : comment.show}))
     setCommentState(statusChanged)
-      await axios.patch('http://localhost:3000/api/comments', {statusComment, id})
+      await axios.patch(process.env.NEXT_PUBLIC_URL + '/api/comments', {statusComment, id})
   }
   useEffect(()=> {
     (async () => {
-      const { data } = await axios.get("http://localhost:3000/api/comments")
+      const { data } = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/comments")
       setCommentState(data)
     })()
   },[])
