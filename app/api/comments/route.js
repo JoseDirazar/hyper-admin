@@ -15,7 +15,7 @@ export async function GET() {
     });
     if(!commentsDB) return new NextResponse("No comments found.", { status: 500 })
 
-    return new NextResponse.json(commentsDB);
+    return  NextResponse.json(commentsDB);
   } catch (error) {
     console.log(error)
     return new NextResponse("Internal error.", { status: 500 })
