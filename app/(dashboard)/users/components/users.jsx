@@ -2,16 +2,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function FetchUsers() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const { data } = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/users");
-
-      setUsers([...data]);
-    })();
-  }, []);
+export default function FetchUsers({data}) {
+  const [users, setUsers] = useState([...data]);
 
   async function handleBann(hyperEventUserId, status, index) {
     try {

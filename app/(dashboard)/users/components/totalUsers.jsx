@@ -1,9 +1,7 @@
-import axios from 'axios'
-export default async function TotalUsers() {
-    const { data }= await axios.get(process.env.NEXT_PUBLIC_URL + '/api/users')
 
+export default function TotalUsers({data}) {
+    
     const totalUsers = data.reduce((acc) => acc + 1, 0)
-
 
     return (
         <>
