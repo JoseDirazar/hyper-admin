@@ -49,7 +49,7 @@ const EventsPage = () => {
         
 
    
-        <div key={2838123} className="flex flex-col  w-[50%]">
+        <div key={2838} className="flex flex-col  w-[50%]">
           {events?.filter((event) => event.active === true).map((event, index) => (
             <div
               key={index}
