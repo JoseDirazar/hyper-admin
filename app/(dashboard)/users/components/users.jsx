@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { toast } from 'react-hot-toast'
 
 export default function FetchUsers({data}) {
   const [users, setUsers] = useState([...data]);
@@ -33,13 +34,13 @@ export default function FetchUsers({data}) {
           </div>
           {user.active ? (
             /* bann = false */ <button
-              onClick={() => handleBann(user.id, false, index)}
+              onClick={() => {handleBann(user.id, false, index); toast.error('User banned.')}}
               className="h-10 cursor-pointer ml-10 bg-red-500 rounded-[4px] pl-1 pr-1"
             >
               Bann
             </button>
           ) : (
-            /* bann = true */ <button onClick={() => handleBann(user.id, true, index)} className="h-10 cursor-pointer ml-10 bg-blue-500 rounded-[4px] pl-1 pr-1">
+            /* bann = true */ <button onClick={() => {handleBann(user.id, true, index), toast.success('User unbanned.')}} className="h-10 cursor-pointer ml-10 bg-blue-500 rounded-[4px] pl-1 pr-1">
               Unbann
             </button>
           )}

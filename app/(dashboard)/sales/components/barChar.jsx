@@ -1,33 +1,39 @@
+'use client'
 import React from "react";
+import { motion } from "framer-motion";
 
 const BarChart = ({ data }) => {
   const maxValue = Math.max(...data.map((item) => item.total));
 
   return (
-    <div className="flex justify-center">
-      <div className="w-[80%] h-64 bg-gray-200 p-4 flex items-center relative">
-        <div className="w-6 h-[90%] flex flex-col justify-between">
+    <div className="flex justify-center mt-5">
+      <div className="w-[80%] h-full bg-gray-200 p-3 flex items-center relative rounded-lg ">
+        <div className="w-6 h-[70%] flex flex-col justify-between">
           <div className="w-[100%] h-full flex flex-col items-center justify-between">
             <div className="text-center">{Math.round(maxValue)}</div>
             <div className="text-center">{Math.round(maxValue / 2)}</div>
             <div className="text-center">0</div>
           </div>
+          <div className="h-[30%]"></div>
         </div>
 
         {data.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative w-16 h-48 flex flex-col items-center justify-end m-2 "
             style={{ flex: `1` }}
+            initial={{ opacity: 0, scaleY: 0 }} // Agrega animación inicial
+            animate={{ opacity: 1, scaleY: 1 }} // Agrega animación de entrada
+            transition={{ duration: 0.5, delay: index * 0.1 }} // Agrega animación de transición
           >
             <div
-              className="w-full bg-blue-500 mb-2"
+              className="w-full bg-purple-400 mb-2"
               style={{
                 height: `${(item.total / maxValue) * 100}%`,
               }}
             ></div>
             <div className="text-center">{item.name}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
