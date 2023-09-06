@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 
 export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
   const [status, setStatus] = useState(true);
+  const [eventIdentefier, setEventIdentefier] = useState(eventId)
 
   useEffect(() => {
     setStatus(eventStatus);
-  }, []);
+  }, [eventIdentefier]);
 
   async function postNewStatus(statusParam, eventIdParam) {
     try {

@@ -70,7 +70,7 @@ const EventsPage = () => {
                 height={200}
                 alt={event.event_name}
               />
-              <HandleEvent eventStatus={event.active} eventId={event.id} handleStatus={handleStatus} />
+              <HandleEvent eventStatus={event?.active} eventId={event?.id} handleStatus={handleStatus} />
             </div>
           ))}
         </div>
