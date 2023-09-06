@@ -2,15 +2,11 @@
 
 import axios from "axios";
 import HandleEvent from "./components/handleEvent";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-
 
 const EventsPage = () => {
 
-
   const [events, setEvents] = useState([])
-  console.log(events)
 
   useEffect(() => {
     (async () => {
