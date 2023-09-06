@@ -3,23 +3,34 @@ import axios from "axios";
 export default async function TotalSales() {
   const sales = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/sales");
 
-  const total = sales.data.reduce((acc, curr) => acc + curr.sales.amount, 0).toFixed(2)
+  const total = sales.data.reduce((acc, curr) => acc + curr.sales.amount, 0).toFixed(2);
 
   return (
-    <div className="flex flex-col">
-      {sales?.data.map((paymentRow, index) => (
-        <div
-          key={index}
-          className="flex justify-center text-center pt-2 pb-2 border-t-2 border-slate-500"
-        >
-          <p className="w-1/2 mx-5">{paymentRow.sales.email}</p>
-          <p className="w-1/2 mx- "> {paymentRow.createdAt} </p>
-          <p className="w-1/2 mx-5">${paymentRow.sales.amount}</p>
-        </div>
-      ))}
-        <div className='flex flex-col items-end '>
-        Total: ${total}
-        </div>
+    <div className="bg-gray-100 rounded-lg shadow-md p-4">
+      <table className="w-full">
+        <thead>
+          <tr className="bg-gray-200">
+            <th className="p-2">Email</th>
+            <th className="p-2">Fecha</th>
+            <th className="p-2">Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sales?.data.map((paymentRow, index) => (
+            <tr key={index} className={index % 2 === 0 ? " bg-purple-200 " : "bg-gray-50"}>
+              <td className="p-2">{paymentRow.sales.email}</td>
+              <td className="p-2">{paymentRow.createdAt}</td>
+              <td className="p-2">${paymentRow.sales.amount}</td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr className="bg-gray-200">
+            <td className="p-2" colSpan="2">Total:</td>
+            <td className="p-2">${total}</td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   );
 }
