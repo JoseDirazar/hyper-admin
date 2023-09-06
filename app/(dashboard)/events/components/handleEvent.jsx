@@ -11,6 +11,8 @@ export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
     setStatus(eventStatus);
   }, [eventIdentefier]);
 
+  
+
   async function postNewStatus(statusParam, eventIdParam) {
     try {
       const statusResponse = await axios.patch(

@@ -31,50 +31,37 @@ const EventsPage = () => {
     setEvents([...filteredEvents, getEvent])
   }
 
-
   return (
     <div className="flex flex-row h-full">
-        <div className="w-[50%]">
-        <div key={2838123} className="flex flex-row flex-wrap ">
+     
+        <div key={2838123} className="w-[50%] flex flex-col ">
           {events?.filter((event) => event.active === false).map((event, index) => (
             <div
               key={index}
-              className="flex flex-col h-80 w-80 items-center justify-center gap-2 border-2 border-blue-500 "
+              className="flex flex-row h-15 w-full  justify-between gap-2 border-2 border-blue-500 "
             >
               <p className="text-sm">{event.event_name}</p>
-              <Image
-                className="w-auto h-auto"
-                src={event.event_image}
-                width={200}
-                height={200}
-                alt={event.event_name}
-              />
+              
               <HandleEvent eventStatus={event.active} eventId={event.id} handleStatus={handleStatus} />
             </div>
           ))}
         </div>
-        </div>
+        
 
-        <div className="w-[50%]">
-        <div key={2838123} className="flex flex-row flex-wrap ">
+   
+        <div key={2838123} className="flex flex-col  w-[50%]">
           {events?.filter((event) => event.active === true).map((event, index) => (
             <div
               key={index}
-              className="flex flex-col h-80 w-80 items-center justify-center gap-2 border-2 border-blue-500 "
+              className="flex flex-row h-15 w-full  justify-between gap-2 border-2 border-blue-500 "
             >
               <p className="text-sm">{event.event_name}</p>
-              <Image
-                className="w-auto h-auto"
-                src={event.event_image}
-                width={200}
-                height={200}
-                alt={event.event_name}
-              />
+            
               <HandleEvent eventStatus={event?.active} eventId={event?.id} handleStatus={handleStatus} />
             </div>
           ))}
         </div>
-        </div>
+      
      
     </div>
   );
