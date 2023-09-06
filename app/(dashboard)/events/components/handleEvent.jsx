@@ -9,7 +9,7 @@ export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
 
   useEffect(() => {
     setStatus(eventStatus);
-  }, [eventIdentefier]);
+  }, [eventStatus]);
 
   
 
