@@ -38,7 +38,7 @@ const EventsPage = () => {
   let eventsPage = [];
   let cantPage = 1;
 
-  const cantCharPerPage = 6;
+  const cantCharPerPage = 8;
 
   let desde = (page - 1) * cantCharPerPage;
   let hasta = page * cantCharPerPage;
@@ -67,7 +67,7 @@ const noActiveEvents = events.filter((event) => !event.active)
           key={2838123}
           className="w-1/2 h-[90%] flex flex-col m-5 border-2 p-5 bg-purple-200 rounded-lg"
         >
-          <h2 className="text-2xl text-center pb-4">Banned Events</h2>
+          <h2 className="text-2xl text-center pb-2">Banned Events</h2>
           {eventsPage?.map((event, index) => (
             <div
               key={index}
@@ -122,7 +122,7 @@ const noActiveEvents = events.filter((event) => !event.active)
           key={2838}
           className="flex flex-col w-1/2 h-[90%] m-5 border-2 p-5 bg-purple-200 rounded-lg"
         >
-          <h2 className="text-2xl text-center pb-4">Active Events</h2>
+          <h2 className="text-2xl text-center pb-2">Active Events</h2>
           {noEventsPage?.map((event, index) => (
             <div
               key={index}
