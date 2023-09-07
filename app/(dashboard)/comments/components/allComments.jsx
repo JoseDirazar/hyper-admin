@@ -35,7 +35,7 @@ export default function AllComments() {
       {commentState?.map((comment, index) => (
         <div
           key={index}
-          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg max-h-[20vh]"
+          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg max-h-[26vh]"
         >
           <div className="p-4">
             <h4 className="text-xl font-semibold text-gray-800">
@@ -45,10 +45,12 @@ export default function AllComments() {
           </div>
           <div className="flex items-center justify-between p-4 border-t border-gray-300">
             <div className="flex items-center">
-              <img
+              <Image
                 src={comment.user.user_image}
                 alt={`${comment.user.name} ${comment.user.last_name}`}
-                className="w-10 h-10 rounded-full mr-2"
+                className="w-10 h-10 rounded-full mr-2 object-cover " 
+                width={20}
+                height={20}
               />
               <p className="text-gray-800">
                 {comment.user.name} {comment.user.last_name}
