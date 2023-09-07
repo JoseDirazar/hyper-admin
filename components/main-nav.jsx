@@ -25,6 +25,7 @@ export default function MainNav() {
 
   return (
     <>
+    <div className="w-19"></div>
       {routes.map((route) => (
         <Link
           key={route.href}

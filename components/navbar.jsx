@@ -11,7 +11,7 @@ const Navbar = async () => {
   return (
     
       <div className="flex min-h-[8vh] items-center px-4 bg-purpleNav">
-        <div className="w-[100%] flex justify-around items-center space-x-4">
+        <div className="w-[100%] flex justify-between items-center space-x-4">
           <MainNav />
           <UserButton afterSignOutUrl="/" />
         </div>
