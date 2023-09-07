@@ -29,7 +29,7 @@ export default function MainNav() {
         <Link
           key={route.href}
           href={route.href}
-          className="text-sm font-medium transition-colors hover:text-primary" >
+          className="text-sm font-medium transition-colors hover:text-primary text-white text-[1.1rem]" >
           {route.label}
         </Link>
       ))}
