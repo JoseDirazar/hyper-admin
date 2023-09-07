@@ -45,7 +45,7 @@ export default function Users() {
   }
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex h-[10vh] w-[85%] mx-auto bg-purpleNav mt-20 rounded-lg border-4 border-[#925FF0] mb-14">
+      <div className="flex h-[10vh] w-[85%] mx-auto bg-white border-purpleOscuro mt-20 shadow-lg rounded border-2 mb-14">
         <div className="flex flex-col items-center justify-center h-full w-80 border-r-2 border-[#925FF0] rounded-md">
           <TotalUsers data={data} />
         </div>
@@ -54,16 +54,16 @@ export default function Users() {
           <div className="text-xl">Banned Users: {totalBannedUsers}</div>
         </div>
       </div>
-      <div className="border-2 border-slate-400 min-h-[60vh] w-[85%] mx-auto mb-20 bg-purpleNav">
+      <div className="border-2 border-slate-400 min-h-[60vh] w-[85%] mx-auto mb-20  bg-purpleNav shadow-lg">
         <div className="flex pt-2 pb-2 justify-evenly my-2">
-          <h2 className="flex justify-center w-48 ml-20">Full Name</h2>
-          <h2 className="flex justify-center w-48 mr-40">Email</h2>
+          <h2 className="flex justify-center w-48 ml-16 text-xl">Full Name</h2>
+          <h2 className="flex justify-center w-48 mr-40 text-xl">Email</h2>
         </div>
         <>
           {data?.map((user, index) => (
             <div
               key={index}
-              className="flex bg-purpleNav items-center justify-between pt-2 pb-2 border-t-2 border-slate-500 px-10"
+              className="flex bg-white rounded shadow-lg items-center justify-between pt-2 pb-2 border-t-2 border-slate-500 px-10"
             >
               <Image
                 className="w-[2.5rem] h-[2.5rem] rounded-full object-cover"
