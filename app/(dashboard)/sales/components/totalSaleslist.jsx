@@ -7,7 +7,7 @@ export default async function TotalSales() {
 
   return (
     <div className="bg-gray-100 rounded-lg shadow-md p-4">
-      <table className="w-full">
+      <table className="w-full text-center">
         <thead>
           <tr className="bg-gray-200">
             <th className="p-2">Email</th>
@@ -26,7 +26,7 @@ export default async function TotalSales() {
         </tbody>
         <tfoot>
           <tr className="bg-gray-200">
-            <td className="p-2" colSpan="2">Total:</td>
+            <td className="p-2 font-bold" colSpan="2">Total:</td>
             <td className="p-2">${total}</td>
           </tr>
         </tfoot>
