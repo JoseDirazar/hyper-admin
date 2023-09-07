@@ -25,6 +25,7 @@ const BarChart = ({ data }) => {
             animate={{ opacity: 1, scaleY: 1 }} // Agrega animación de entrada
             transition={{ duration: 0.5, delay: index * 0.1 }} // Agrega animación de transición
           >
+            <div className=" text-xs ">{item.total}</div>
             <div
               className="w-full bg-purple-400 mb-2"
               style={{
