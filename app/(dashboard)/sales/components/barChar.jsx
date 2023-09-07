@@ -9,7 +9,7 @@ const BarChart = ({ data }) => {
     <div className="flex justify-center mt-5">
       <div className="w-[85%] h-full bg-gray-200 p-3 mt-5 flex items-center relative rounded-lg ">
         <div className="w-6 h-[12rem] flex flex-col justify-evenly">
-          <div className="w-[100%] h-full flex flex-col items-center justify-between">
+          <div className="w-[100%] h-full flex flex-col items-center justify-between mb-[2rem] pl-3">
             <div className="text-center">{Math.round(maxValue)}</div>
             <div className="text-center">{Math.round(maxValue / 2)}</div>
             <div className="text-center">0</div>
@@ -32,6 +32,7 @@ const BarChart = ({ data }) => {
                 height: `${(item.total / maxValue) * 100}%`,
               }}
             ></div>
+            <div className="h-[0.1rem] w-[118%] ml-5 bg-purpleOscuro"></div>
             <div className="text-center">{item.name}</div>
           </motion.div>
         ))}

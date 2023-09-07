@@ -38,7 +38,7 @@ const EventsPage = () => {
   let eventsPage = [];
   let cantPage = 1;
 
-  const cantCharPerPage = 8;
+  const cantCharPerPage = 5;
 
   let desde = (page - 1) * cantCharPerPage;
   let hasta = page * cantCharPerPage;
@@ -60,18 +60,18 @@ const noActiveEvents = events.filter((event) => !event.active)
   noEventsPage = activeEvents.slice(nodesde, nohasta);
 
   return (
-    <>
-      <h2 className="text-center pt-3 text-2xl">Manage Hyper-Events:</h2>
-      <div className="flex flex-row h-full m-5">
+    <div className="mt-5 mb-20">
+      <h2 className="text-center text-2xl">Manage Hyper-Events:</h2>
+      <div className="flex flex-row h-full m-5 mb-10">
         <div
           key={2838123}
-          className="w-1/2 h-[90%] flex flex-col m-5 border-2 p-5 bg-purple-200 rounded-lg"
+          className="w-1/2 h-[110%] min-h-[38rem] flex flex-col m-5 border-2 p-5 bg-white shadow-lg rounded-lg"
         >
           <h2 className="text-2xl text-center pb-2">Banned Events</h2>
           {eventsPage?.map((event, index) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-purple-300 rounded-lg"
+              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-white shadow-lg rounded-lg"
             >
               <p className="text-lg">{event.event_name}</p>
               <HandleEvent
@@ -120,13 +120,13 @@ const noActiveEvents = events.filter((event) => !event.active)
 
         <div
           key={2838}
-          className="flex flex-col w-1/2 h-[90%] m-5 border-2 p-5 bg-purple-200 rounded-lg"
+          className="flex flex-col w-1/2 h-[90%] min-h-[38rem] m-5 border-2 p-5 bg-white shadow-lg rounded-lg"
         >
           <h2 className="text-2xl text-center pb-2">Active Events</h2>
           {noEventsPage?.map((event, index) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-purple-300 rounded-lg"
+              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-white shadow-lg rounded-lg"
             >
               <p className="text-lg">{event.event_name}</p>
               <HandleEvent
@@ -175,7 +175,7 @@ const noActiveEvents = events.filter((event) => !event.active)
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

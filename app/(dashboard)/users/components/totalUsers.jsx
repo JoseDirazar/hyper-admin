@@ -6,7 +6,7 @@ export default function TotalUsers({data}) {
     
 
     return (
-        <div className="">
+        <div className="flex items-center justify-center bg-purpleNav w-[100%] h-[100%]">
            <div className=' text-3xl'>Total users: {totalUsers}</div>
         </div>
     )
