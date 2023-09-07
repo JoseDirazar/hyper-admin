@@ -43,7 +43,7 @@ export default function AllComments() {
             </h4>
             <p className="mt-2 text-gray-600">{comment.comment}</p>
           </div>
-          <div className="flex items-center justify-between p-4 border-t border-gray-300">
+          <div className="flex items-center justify-between border-b p-4 border-t border-gray-300">
             <div className="flex items-center">
               <Image
                 src={comment.user.user_image}
