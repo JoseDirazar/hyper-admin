@@ -33,11 +33,12 @@ const EventsPage = () => {
   return (
     <div className="flex flex-row h-full m-5">
      
-        <div key={2838123} className="w-[50%] flex flex-col  m-5 border-2 p-5">
+        <div key={2838123} className="w-[50%] flex flex-col  m-5 border-2 p-5 bg-purple-200">
+          <h2>Banned Events</h2>
           {events?.filter((event) => event.active === false).map((event,  index = 8123478) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full m-2 justify-between border-2 border-blue-500 "
+              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-purple-300  "
             >
               <p className="text-sm">{event.event_name}</p>
               
@@ -48,11 +49,12 @@ const EventsPage = () => {
         
 
    
-        <div key={2838} className="flex flex-col  w-[50%] m-5 border-2 p-5">
+        <div key={2838} className="flex flex-col  w-[50%] m-5 border-2 p-5 bg-purple-200">
+        <h2>Active Events</h2>
           {events?.filter((event) => event.active === true).map((event, index) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full m-2 justify-between border-2 border-slate-500 "
+              className="flex flex-row h-15 w-full m-1 px-2 items-center justify-between border-2 border-black-500 bg-purple-300  "
             >
               <p className="text-sm">{event.event_name}</p>
             
