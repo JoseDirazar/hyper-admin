@@ -25,7 +25,7 @@ export default function FetchUsers({data}) {
       {users?.map((user, index) => (
         <div
           key={index}
-          className="flex items-center pt-2 pb-2 border-t-2 border-slate-500"
+          className="flex items-center justify-between pt-2 pb-2 border-t-2 border-slate-500 px-10"
         >
           <div className="flex justify-center w-60">{user.email}</div>
           <div className="flex justify-center w-96">{user.id}</div>
