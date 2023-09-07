@@ -26,13 +26,13 @@ export default function FetchUsers({data}) {
       {users?.map((user, index) => (
         <div
           key={index}
-          className="flex items-center justify-between pt-2 pb-2 border-t-2 border-slate-500 px-10"
+          className="flex bg-purpleNav items-center justify-between pt-2 pb-2 border-t-2 border-slate-500 px-10"
         >
-          <Image className="w-auto h-auto rounded-full" src={user.user_image} width={150} height={150}/>
-          <div className="flex justify-center w-60">{user.email}</div>
+          <Image className="w-[4rem] h-[4rem] rounded-full" alt={user.name} src={user.user_image} width={150} height={150}/>
           <div className="flex justify-center w-48">
             {user.name} {user.last_name}
           </div>
+          <div className="flex justify-center w-60">{user.email}</div>
           {user.active ? (
             /* bann = false */ <button
               onClick={() => {handleBann(user.id, false, index); toast.error('User banned.')}}

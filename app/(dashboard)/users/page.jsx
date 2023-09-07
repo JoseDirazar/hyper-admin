@@ -13,7 +13,7 @@ export default async function Users() {
   ).length;
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex h-[30vh] w-[80%] mx-auto bg-slate-300 mt-20 rounded-lg border-4 border-black mb-14">
+      <div className="flex h-[30vh] w-[80%] mx-auto bg-purpleNav mt-20 rounded-lg border-4 border-[#925FF0] mb-14">
         <div className="flex flex-col items-center h-full w-80 border-r-2 border-[gray] rounded-md">
           {/* Estilo adicional para el componente TotalUsers */}
           <TotalUsers
@@ -22,16 +22,14 @@ export default async function Users() {
           />
         </div>
         <div className="flex justify-evenly w-full items-center">
-          <div>Active Users: {totalActiveUsers}</div>
-          <div>Banned Users: {totalBannedUsers}</div>
+          <div className="text-xl">Active Users: {totalActiveUsers}</div>
+          <div className="text-xl">Banned Users: {totalBannedUsers}</div>
         </div>
       </div>
-      <div className="border-2 border-slate-400 min-h-[60vh] w-[85%] mx-auto mb-20">
-        <div className="flex pt-2 pb-2 justify-around mr-48">
-          <h2 className="flex justify-center w-60">Full Name</h2>
-          <h2 className="flex justify-center w-60">Email</h2>
-          <h2 className="flex justify-center w-96">Id</h2>
-          <h2 className="flex justify-center w-48">Name</h2>
+      <div className="border-2 border-slate-400 min-h-[60vh] w-[85%] mx-auto mb-20 bg-purpleNav">
+        <div className="flex pt-2 pb-2 justify-evenly my-2">
+          <h2 className="flex justify-center w-48 ml-20">Full Name</h2>
+          <h2 className="flex justify-center w-48 mr-40">Email</h2>
         </div>
         <FetchUsers data={data} />
       </div>
