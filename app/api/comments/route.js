@@ -13,12 +13,12 @@ export async function GET() {
             user: true
         }
     });
-    if(!commentsDB) return new NextResponse("No comments found.", { status: 500 })
+    if(!commentsDB) return  NextResponse("No comments found.", { status: 500 })
 
     return  NextResponse.json(commentsDB);
   } catch (error) {
     console.log(error)
-    return new NextResponse("Internal error.", { status: 500 })
+    return NextResponse("Internal error.", { status: 500 })
   }
 }
 
@@ -32,11 +32,11 @@ export async function PATCH(req) {
       where: { id: id },
       data: { show: statusComment }});
 
-    if(!commentToShow) return new NextResponse("No comments found.", { status: 500 })
+    if(!commentToShow) return NextResponse("No comments found.", { status: 500 })
 
-    return new NextResponse.json(commentToShow);
+    return NextResponse.json(commentToShow);
   } catch (error) {
     console.log(error)
-    return new NextResponse("Internal error.", { status: 500 })
+    return  NextResponse("Internal error.", { status: 500 })
   }
 }
