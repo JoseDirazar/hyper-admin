@@ -1,6 +1,3 @@
-import Navbar from '../../components/navbar'
-import FetchUsers from '../(dashboard)/users/components/users'
-
 import Link from 'next/link'
 
 
