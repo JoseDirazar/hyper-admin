@@ -30,12 +30,12 @@ export default function AllComments() {
 
   return (
     <div className="min-h-screen flex flex-col min-w-full">
-  <div className="flex justify-center min-w-full min-h-full border-4 rounded border-slate-400 p-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div className="flex  min-w-full min-h-full rounded">
+    <div className="flex flex-wrap items-start justify-start gap-4 p-3">
       {commentState?.map((comment, index) => (
         <div
           key={index}
-          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg max-h-[26vh]"
+          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg h-auto"
         >
           <div className="p-4">
             <h4 className="text-xl font-semibold text-gray-800">
@@ -46,11 +46,12 @@ export default function AllComments() {
           <div className="flex items-center justify-between border-b p-4 border-t border-gray-300">
             <div className="flex items-center">
               <Image
+                priority
                 src={comment.user.user_image}
                 alt={`${comment.user.name} ${comment.user.last_name}`}
                 className="w-10 h-10 rounded-full mr-2 object-cover " 
-                width={20}
-                height={20}
+                width={10}
+                height={10}
               />
               <p className="text-gray-800">
                 {comment.user.name} {comment.user.last_name}
