@@ -4,6 +4,13 @@ import TotalUsers from "./components/totalUsers";
 import axios from "axios";
 export default async function Users() {
   const { data } = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/users");
+
+  const totalActiveUsers = [...data].filter(
+    (user) => user.active === true
+  ).length;
+  const totalBannedUsers = [...data].filter(
+    (user) => user.active === false
+  ).length;
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex h-[30vh] w-[80%] mx-auto bg-slate-300 mt-20 rounded-lg border-4 border-black mb-14">
@@ -14,9 +21,14 @@ export default async function Users() {
             style={{ backgroundColor: "lightblue", padding: "20px" }}
           />
         </div>
+        <div className="flex justify-evenly w-full items-center">
+          <div>Active Users: {totalActiveUsers}</div>
+          <div>Banned Users: {totalBannedUsers}</div>
+        </div>
       </div>
       <div className="border-2 border-slate-400 min-h-[60vh] w-[85%] mx-auto mb-20">
         <div className="flex pt-2 pb-2 justify-around mr-48">
+          <h2 className="flex justify-center w-60">Full Name</h2>
           <h2 className="flex justify-center w-60">Email</h2>
           <h2 className="flex justify-center w-96">Id</h2>
           <h2 className="flex justify-center w-48">Name</h2>
