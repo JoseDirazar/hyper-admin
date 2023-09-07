@@ -31,13 +31,13 @@ const EventsPage = () => {
     setEvents(updatedEvents);
   }
   return (
-    <div className="flex flex-row h-full">
+    <div className="flex flex-row h-full m-5">
      
-        <div key={2838123} className="w-[50%] flex flex-col ">
+        <div key={2838123} className="w-[50%] flex flex-col  m-5 border-2 p-5">
           {events?.filter((event) => event.active === false).map((event,  index = 8123478) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full  justify-between gap-2 border-2 border-blue-500 "
+              className="flex flex-row h-15 w-full m-2 justify-between border-2 border-blue-500 "
             >
               <p className="text-sm">{event.event_name}</p>
               
@@ -48,11 +48,11 @@ const EventsPage = () => {
         
 
    
-        <div key={2838} className="flex flex-col  w-[50%]">
+        <div key={2838} className="flex flex-col  w-[50%] m-5 border-2 p-5">
           {events?.filter((event) => event.active === true).map((event, index) => (
             <div
               key={index}
-              className="flex flex-row h-15 w-full  justify-between gap-2 border-2 border-blue-500 "
+              className="flex flex-row h-15 w-full m-2 justify-between border-2 border-slate-500 "
             >
               <p className="text-sm">{event.event_name}</p>
             

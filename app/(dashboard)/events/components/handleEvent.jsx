@@ -25,7 +25,7 @@ export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
  
   {eventStatus && (  <button
       key={824778234874}
-      className="bg-red-500 text-white rounded-full px-4 py-2 border border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
+      className="bg-red-500 text-white rounded-full px-1 py-1 border border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
       onClick={() => {postNewStatus(false, eventId); toast.error('Event disabled.')}}
     >
       Disable
@@ -33,7 +33,7 @@ export default function HandleEvent({ eventStatus, eventId, handleStatus }) {
   
   { !eventStatus && (<button
       key={78234762}
-      className="bg-blue-500 text-white rounded-full px-4 py-2 border border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+      className="bg-blue-500 text-white rounded-full  px-1 py-1 border border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
       onClick={() => {postNewStatus(true, eventId); toast.success('Event is now active.')}}
     >
       Enable
