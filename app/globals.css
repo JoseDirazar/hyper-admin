@@ -32,6 +32,6 @@ body,
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #fff;
+  color: rgb(var(--foreground-start-rgb));
+  background: #ffffff;
 }
