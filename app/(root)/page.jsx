@@ -9,13 +9,15 @@ export default function Home() {
         className="text-4xl font-bold text-center mb-8"
         initial={{ y: "-50%", x: "0%", opacity: 0 }}
         animate={{ y: 0, x: "0%", opacity: 1 }}
+        transition={{duration: 1}}
       >
         Hyper Admin
       </motion.h1>
       <motion.div
         className="flex flex-col items-center space-y-4"
-        initial={{ y: "-50%", x: "0%", opacity: 0 }}
+        initial={{ y: "50%", x: "0%", opacity: 0 }}
         animate={{ y: 0, x: "0%", opacity: 1 }}
+        transition={{duration: 1}}
       >
         <Link
           href="/users"
