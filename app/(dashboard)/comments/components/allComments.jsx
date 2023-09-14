@@ -31,11 +31,11 @@ export default function AllComments() {
   return (
     <div className="min-h-screen flex flex-col min-w-full">
   <div className="flex  min-w-full min-h-full rounded">
-    <div className="flex flex-wrap items-start justify-start gap-4 p-3">
+    <div className="flex flex-wrap items-center justify-center gap-4 p-3">
       {commentState?.map((comment, index) => (
         <div
           key={index}
-          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg h-auto"
+          className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg max-h-50"
         >
           <div className="p-4">
             <h4 className="text-xl font-semibold text-gray-800">
