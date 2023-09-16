@@ -1,9 +1,4 @@
-import axios from "axios";
-
-export default async function TotalSales() {
-  const sales = await axios.get(process.env.NEXT_PUBLIC_URL + "/api/sales");
-
-  const total = sales.data.reduce((acc, curr) => acc + curr.sales.amount, 0).toFixed(2);
+export default async function TotalSales({sales, total}) {
 
   return (
     <div className="bg-gray-100 rounded-lg shadow-md p-4">
